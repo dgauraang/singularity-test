@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: ubuntu:16.04
+
+%post
+    apt-get -y update
+    apt-get -y install git 
+    git clone https://github.com/dgauraang/singularity-test.git
+    cd singularity-test
+%runscript
+    pwd
+    python test.py
